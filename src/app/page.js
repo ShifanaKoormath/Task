@@ -1,5 +1,5 @@
 "use client";
-import "./styles/global.css"; // Ensure this file is imported if you have global styles
+import "./styles/global.css";
 
 import { useEffect } from "react";
 import { motion } from "framer-motion";
@@ -33,39 +33,46 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <motion.h1
-        className={styles.heading}
+        className={styles.hola}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
         hola!
       </motion.h1>
-      <motion.div
-        className={styles.bellIcon}
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <span role="img" aria-label="bell">
-          🔔
-        </span>
-      </motion.div>
-      <motion.h2
-        className={styles.subHeading}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        Lorem Ipsum
-      </motion.h2>
-      <motion.p
-        className={styles.paragraph}
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        Lorem ipsum dolor sit amet.
-      </motion.p>
+      <div className={styles.bellIconContainer}>
+        <div className={`${styles.circle} ${styles.circle1}`} />
+        <div className={`${styles.circle} ${styles.circle2}`} />
+        <div className={`${styles.circle} ${styles.circle3}`} />
+        <motion.div
+          className={styles.bellIcon}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <span role="img" aria-label="bell">
+            🔔
+          </span>
+        </motion.div>
+      </div>
+      <div className="text-center">
+        <motion.h2
+          className={styles.heading}
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          Lorem Ipsum
+        </motion.h2>
+        <motion.p
+          className={styles.paragraph}
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          Lorem ipsum dolor sit amet.
+        </motion.p>
+      </div>
       <motion.button
         className={styles.customButton}
         whileHover={{ scale: 1.1 }}
