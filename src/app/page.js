@@ -1,6 +1,5 @@
 "use client";
 import "./styles/global.css";
-
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import styles from "./styles/Home.module.css";
@@ -22,11 +21,34 @@ export default function Home() {
     }
   }, []);
 
-  const sendNotification = () => {
-    if ("serviceWorker" in navigator && "PushManager" in window) {
-      navigator.serviceWorker.ready.then((registration) => {
-        registration.showNotification("Hello, World!");
+  const requestNotificationPermission = () => {
+    if (Notification.permission === "default") {
+      Notification.requestPermission().then((permission) => {
+        if (permission === "granted") {
+          console.log("Notification permission granted.");
+        } else {
+          console.log("Notification permission denied.");
+        }
       });
+    } else {
+      console.log("Notification permission status:", Notification.permission);
+    }
+  };
+
+  const sendNotification = () => {
+    if (Notification.permission === "granted") {
+      if ("serviceWorker" in navigator && "PushManager" in window) {
+        navigator.serviceWorker.ready.then((registration) => {
+          registration.showNotification("Hello, World!", {
+            body: "This is a notification.",
+            icon: "icon.png",
+          });
+        });
+      }
+    } else if (Notification.permission === "default") {
+      requestNotificationPermission();
+    } else {
+      console.log("Notification permission denied.");
     }
   };
 
