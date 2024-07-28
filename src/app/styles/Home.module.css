@@ -6,7 +6,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ensures elements are spaced from top to bottom */
+  justify-content: space-between; 
   align-items: center;
   font-family: 'Roboto', sans-serif;
   padding: 20px;
@@ -25,7 +25,7 @@
 
 .bellIcon {
   font-size: 100px;
-  color: white; /* Ensure the bell icon is white */
+  color: white; 
   z-index: 10;
 }
 
@@ -38,27 +38,27 @@
 .circle1 {
   width: 150px;
   height: 150px;
-  background-color: #c482f0; /* Vibrant purple */
+  background-color: #c482f0; 
   z-index: 1;
 }
 
 .circle2 {
   width: 200px;
   height: 200px;
-  background-color: #671368; /* Lighter purple */
+  background-color: #671368; 
   z-index: 2;
 }
 
 .circle3 {
   width: 250px;
   height: 250px;
-  background-color: #a438a4; /* Even lighter purple */
+  background-color: #a438a4; 
   z-index: 3;
 }
 
 .heading {
   font-size: 2.5rem;
-  font-weight: 700; /* Bold font */
+  font-weight: 700; 
   margin-bottom: 10px;
 }
 
@@ -80,6 +80,6 @@
 }
 
 .customButton:hover {
-  background-color: #dda0dd;
+  background-color: #ab37ab;
   border-color: #48043d;
 }
