@@ -1,17 +1,9 @@
-self.addEventListener("install", (event) => {
-  console.log("Service Worker installing.");
-});
-
-self.addEventListener("activate", (event) => {
-  console.log("Service Worker activating.");
-});
-
-self.addEventListener("push", (event) => {
-  const title = "Notification";
+self.addEventListener("push", function (event) {
+  const data = event.data.json();
   const options = {
-    body: event.data.text(),
-    icon: "icon-192x192.png",
-    badge: "icon-192x192.png",
+    body: data.body,
+    icon: "icon.png",
+    badge: "badge.png",
   };
-  event.waitUntil(self.registration.showNotification(title, options));
+  event.waitUntil(self.registration.showNotification(data.title, options));
 });

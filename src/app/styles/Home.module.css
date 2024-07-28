@@ -1,0 +1,104 @@
+/* src/app/styles/Home.module.css */
+
+.container {
+  background: linear-gradient(to right, purple, black);
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 20px;
+}
+
+.bellIcon {
+  font-size: 100px;
+  margin: 20px 0;
+  position: relative;
+  color: white;
+}
+
+.bellIcon span {
+  position: relative;
+  z-index: 2;
+  color: white; /* Ensure the bell icon is white */
+}
+
+.bellIcon::before,
+.bellIcon::after,
+.bellIcon::after::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.bellIcon::before {
+  width: 150px;
+  height: 150px;
+  top: -25px;
+  left: -25px;
+  background: rgba(128, 0, 128, 0.5);
+}
+
+.bellIcon::after {
+  width: 200px;
+  height: 200px;
+  top: -50px;
+  left: -50px;
+  background: rgba(128, 0, 128, 0.3);
+}
+
+.bellIcon::after::after {
+  width: 250px;
+  height: 250px;
+  top: -75px;
+  left: -75px;
+  background: rgba(128, 0, 128, 0.2);
+}
+
+.customButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #fff; /* Default background color */
+  color: #000; /* Default text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.customButton:hover {
+  background-color: #ddd; /* Background color on hover */
+  color: #333; /* Text color on hover */
+}
+
+.customButton:active {
+  background-color: #bbb; /* Background color when active */
+  color: #111; /* Text color when active */
+}
+
+.heading {
+  font-size: 2rem; /* Adjusted font size */
+  font-weight: 700; /* Bold font weight */
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-top: 20px; /* Added margin to top */
+}
+
+.subHeading {
+  font-size: 1.5rem; /* Large font size */
+  font-weight: 700; /* Bold font weight */
+  margin-bottom: 1rem;
+}
+
+.paragraph {
+  font-size: 1.25rem; /* Adjust font size */
+  margin-bottom: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+
